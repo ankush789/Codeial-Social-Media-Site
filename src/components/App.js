@@ -1,5 +1,15 @@
-function App() {
-  return <div className="App">App</div>;
-}
+import React from 'react';
+import { connect } from 'react-redux';
 
-export default App;
+class App extends React.Component {
+  render() {
+    console.log('Props', this.props);
+    return <div>App</div>;
+  }
+}
+function mapStateToProps(state) {
+  return {
+    posts: state.posts,
+  };
+}
+export default connect(mapStateToProps)(App);
