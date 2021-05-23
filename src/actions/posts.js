@@ -1,15 +1,16 @@
 import { UPDATE_POSTS } from './actionTypes';
 export function fetchPosts() {
   return (dispatch) => {
-    const url = 'https://codeial.com:9000/api/v2/posts?page=1&limit=5';
+    const url =
+      'https://my-json-server.typicode.com/ankush789/jsonserver/posts';
     fetch(url)
       .then((response) => {
-        console.log('RESPONSE', response);
+        // console.log('RESPONSE', response);
         return response.json();
       })
       .then((data) => {
         console.log(data);
-        dispatch(updatePosts(data.data.posts));
+        dispatch(updatePosts(data));
       });
   };
 }
