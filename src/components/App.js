@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { fetchPosts } from '../actions/posts';
-import { Home, Navbar, Error404 } from './';
+import { Home, Navbar, Error404, Login, SignUp } from './';
 
-const login = () => <div>Login</div>;
 const signup = () => <div>SIgnup</div>;
 
 class App extends React.Component {
@@ -24,7 +23,7 @@ class App extends React.Component {
               path="/"
               render={(props) => <Home {...props} posts={posts} />}
             />
-            <Route path="/login" component={login} />
+            <Route path="/login" component={Login} />
             <Route path="/signup" component={signup} />
             <Route path="*" component={Error404} />
           </Switch>
