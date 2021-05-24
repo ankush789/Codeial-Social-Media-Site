@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 class Navbar extends Component {
   render() {
     return (
       <nav className="nav">
         <div className="left-div">
-          <img
-            src="https://ninjasfiles.s3.amazonaws.com/0000000000003454.png"
-            alt="logo"
-          />
+          <Link to="/">
+            <img
+              src="https://ninjasfiles.s3.amazonaws.com/0000000000003454.png"
+              alt="logo"
+            />
+          </Link>
         </div>
         <div className="search-container">
           <img
@@ -39,18 +41,26 @@ class Navbar extends Component {
         </div>
         <div className="right-nav">
           <div className="user">
-            <img
-              src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
-              alt="user-dp"
-              id="user-dp"
-            />
-            <span>John Doe</span>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+              <img
+                src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                alt="user-dp"
+                id="user-dp"
+              />
+            </Link>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+              <span>John Doe</span>
+            </Link>
           </div>
           <div className="nav-links">
             <ul>
-              <li>Log in</li>
-              <li>Log out</li>
-              <li>Register</li>
+              <li>
+                <Link to="/login">Log in</Link>
+              </li>
+              <li>Log Out</li>
+              <li>
+                <Link to="/signup">Register</Link>
+              </li>
             </ul>
           </div>
         </div>
